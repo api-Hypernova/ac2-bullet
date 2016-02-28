@@ -163,7 +163,7 @@ namespace game
 			//tmpvec = vec(float(trans.getOrigin().getX()),float(trans.getOrigin().getY()),float(trans.getOrigin().getZ()));
 			//tmprot = vec(float(trans.getRotation().getX()),float(trans.getRotation().getY()),float(trans.getRotation().getZ()));
 			tmpvec = vec(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ());
-			conoutf("%f %f %f", tmpvec.x, tmpvec.y, tmpvec.z);
+            //conoutf("%f %f %f", tmpvec.x, tmpvec.y, tmpvec.z);
 			
 			//tmprot = vec(trans.getRotation().getX(),trans.getRotation().getY(),trans.getRotation().getZ());
 			tmprot = EulerRotation;
