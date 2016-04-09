@@ -3,8 +3,13 @@
 
 //#include "LinearMath/btQuickprof.h"
 //#include "LinearMath/btIDebugDraw.h"
-
-
+#include "cube.h"
+#include "world.h"
+#include "octa.h"
+#include "light.h"
+#include "texture.h"
+#include "bih.h"
+#include "model.h"
 #include "LinearMath/btDefaultMotionState.h"
 #include "LinearMath/btIDebugDraw.h"
 #include "LinearMath/btQuickprof.h"
@@ -29,7 +34,7 @@ class btTriangleIndexVertexArray;
 
 extern int PHYSDebugDraw;
 
-//extern btRigidBody *setcbfrommodel(vec o, const char *mdl, vec dir, int weight);//attatch collision box to model
+extern btRigidBody *setcbfrommodel(vec o, const char *mdl, vec dir, int weight);//attatch collision box to model
 
 extern void buildLevelTriCol();// build level collision mesh
 

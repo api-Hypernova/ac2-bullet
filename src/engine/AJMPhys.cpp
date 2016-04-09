@@ -3,8 +3,8 @@
 #include "engine.h"
 #include "game.h"
 
-#include "LinearMath/btAabbUtil2.h"
-#include "LinearMath/btMatrix3x3.h"
+//#include "LinearMath/btAabbUtil2.h"
+//#include "LinearMath/btMatrix3x3.h"
 /////includes for bullet are in cube.h
 /////disabled new and delete to resolve conflict with cpp new and delete included with bullet/////
 //////////////////////////bullet//////////////////////////////////////////////////////

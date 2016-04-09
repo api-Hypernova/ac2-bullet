@@ -2,8 +2,8 @@
 // the gamecode extends these types to add game specific functionality
 
 // ET_*: the only static entity types dictated by the engine... rest are gamecode dependent
-#include "../bullet/src/btBulletDynamicsCommon.h"
-#include "../bullet/src/btBulletCollisionCommon.h"
+#include <btBulletDynamicsCommon.h>
+#include <btBulletCollisionCommon.h>
 
 //#ifndef btRidgidBody
 //#define btRidgidBody
