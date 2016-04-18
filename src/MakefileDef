@@ -1,4 +1,4 @@
-CXXFLAGS= -O3 -fomit-frame-pointer -ffast-math -I /usr/local/include/bullet#$(pkg-config --cflags bullet)
+CXXFLAGS= -O3 -fomit-frame-pointer -ffast-math
 override CXXFLAGS+= -Wall -fsigned-char -fno-exceptions -fno-rtti
 
 PLATFORM= $(shell uname -s)
@@ -48,7 +48,7 @@ STD_LIBS= -static-libgcc -static-libstdc++
 CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL2 -lSDL2_image -lSDL2_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
 else	
 CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl2-config --cflags`
-CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib -lX11 `sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lz -lGL -I /usr/local/include/bullet/ #$(pkg-config --libs bullet)
+CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib -lX11 `sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lz -lGL
 endif
 ifeq ($(PLATFORM),Linux)
 CLIENT_LIBS+= -lrt
@@ -83,7 +83,6 @@ CLIENT_OBJS= \
 	engine/octaedit.o \
 	engine/octarender.o \
 	engine/physics.o \
-    engine/AJMPhys.o \
 	engine/pvs.o \
 	engine/rendergl.o \
 	engine/renderlights.o \
@@ -104,7 +103,6 @@ CLIENT_OBJS= \
 	engine/worldio.o \
 	game/ai.o \
 	game/client.o \
-	game/AJMmovable.o \
 	game/entities.o \
 	game/game.o \
 	game/render.o \
@@ -329,11 +327,6 @@ engine/physics.o: shared/ents.h shared/command.h shared/glexts.h
 engine/physics.o: shared/glemu.h shared/iengine.h shared/igame.h
 engine/physics.o: engine/world.h engine/octa.h engine/light.h
 engine/physics.o: engine/texture.h engine/bih.h engine/model.h engine/mpr.h
-engine/AJMPhys.o: engine/engine.h shared/cube.h shared/tools.h shared/geom.h
-engine/AJMPhys.o: shared/ents.h shared/command.h shared/glexts.h engine/AJMPhys.h
-engine/AJMPhys.o: shared/glemu.h shared/iengine.h shared/igame.h engine/AJMPhys.h
-engine/AJMPhys.o: engine/world.h engine/octa.h engine/light.h engine/AJMPhys.h
-engine/AJMPhys.o: engine/texture.h engine/bih.h engine/model.h engine/mpr.h engine/AJMPhys.h
 engine/pvs.o: engine/engine.h shared/cube.h shared/tools.h shared/geom.h
 engine/pvs.o: shared/ents.h shared/command.h shared/glexts.h shared/glemu.h
 engine/pvs.o: shared/iengine.h shared/igame.h engine/world.h engine/octa.h
@@ -429,12 +422,6 @@ engine/worldio.o: shared/ents.h shared/command.h shared/glexts.h
 engine/worldio.o: shared/glemu.h shared/iengine.h shared/igame.h
 engine/worldio.o: engine/world.h engine/octa.h engine/light.h
 engine/worldio.o: engine/texture.h engine/bih.h engine/model.h
-engine/AJMPhys.h.gch: shared/cube.h shared/tools.h shared/geom.h shared/ents.h
-engine/AJMPhys.h.gch: shared/command.h shared/glexts.h shared/glemu.h
-engine/AJMPhys.h.gch: shared/iengine.h shared/igame.h engine/world.h
-engine/AJMPhys.h.gch: engine/octa.h engine/light.h engine/texture.h
-engine/AJMPhys.h.gch: engine/bih.h engine/model.h shared/tools.h
-
 game/ai.o: game/game.h shared/cube.h shared/tools.h shared/geom.h
 game/ai.o: shared/ents.h shared/command.h shared/glexts.h shared/glemu.h
 game/ai.o: shared/iengine.h shared/igame.h game/ai.h
@@ -463,9 +450,6 @@ game/waypoint.o: shared/glemu.h shared/iengine.h shared/igame.h game/ai.h
 game/weapon.o: game/game.h shared/cube.h shared/tools.h shared/geom.h
 game/weapon.o: shared/ents.h shared/command.h shared/glexts.h shared/glemu.h
 game/weapon.o: shared/iengine.h shared/igame.h game/ai.h
-game/AJMmovable.o: game/game.h shared/cube.h shared/tools.h shared/geom.h
-game/AJMmovable.o: shared/ents.h shared/command.h shared/glexts.h shared/glemu.h
-game/AJMmovable.o: shared/iengine.h shared/igame.h game/ai.h
 
 shared/cube.h.gch: shared/tools.h shared/geom.h shared/ents.h
 shared/cube.h.gch: shared/command.h shared/glexts.h shared/glemu.h
