@@ -1,4 +1,4 @@
-CXXFLAGS= -O3 -fomit-frame-pointer -ffast-math -I /usr/local/include/bullet#$(pkg-config --cflags bullet)
+CXXFLAGS= -O3 -fomit-frame-pointer -ffast-math -I /usr/local/include/bullet
 override CXXFLAGS+= -Wall -fsigned-char -fno-exceptions -fno-rtti
 
 PLATFORM= $(shell uname -s)
@@ -48,7 +48,7 @@ STD_LIBS= -static-libgcc -static-libstdc++
 CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL2 -lSDL2_image -lSDL2_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
 else	
 CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl2-config --cflags`
-CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib -lX11 `sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lz -lGL -I /usr/local/include/bullet/ #$(pkg-config --libs bullet)
+CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib -lX11 `sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lz -lGL -I /usr/local/include/bullet
 endif
 ifeq ($(PLATFORM),Linux)
 CLIENT_LIBS+= -lrt
@@ -434,7 +434,6 @@ engine/AJMPhys.h.gch: shared/command.h shared/glexts.h shared/glemu.h
 engine/AJMPhys.h.gch: shared/iengine.h shared/igame.h engine/world.h
 engine/AJMPhys.h.gch: engine/octa.h engine/light.h engine/texture.h
 engine/AJMPhys.h.gch: engine/bih.h engine/model.h shared/tools.h
-
 game/ai.o: game/game.h shared/cube.h shared/tools.h shared/geom.h
 game/ai.o: shared/ents.h shared/command.h shared/glexts.h shared/glemu.h
 game/ai.o: shared/iengine.h shared/igame.h game/ai.h

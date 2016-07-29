@@ -1,0 +1,74 @@
+g++ -O3 -fomit-frame-pointer -ffast-math -I /usr/local/include/bullet -Wall -fsigned-char -fno-exceptions -fno-rtti -o tess_client shared/crypto.o shared/geom.o shared/glemu.o shared/stream.o shared/tools.o shared/zip.o engine/aa.o engine/bih.o engine/blend.o engine/client.o engine/command.o engine/console.o engine/dynlight.o engine/grass.o engine/light.o engine/main.o engine/material.o engine/menus.o engine/movie.o engine/normal.o engine/octa.o engine/octaedit.o engine/octarender.o engine/physics.o engine/AJMPhys.o engine/pvs.o engine/rendergl.o engine/renderlights.o engine/rendermodel.o engine/renderparticles.o engine/rendersky.o engine/rendertext.o engine/renderva.o engine/server.o engine/serverbrowser.o engine/shader.o engine/sound.o engine/stain.o engine/texture.o engine/ui.o engine/water.o engine/world.o engine/worldio.o game/ai.o game/client.o game/AJMmovable.o game/entities.o game/game.o game/render.o game/scoreboard.o game/server.o game/waypoint.o game/weapon.o -Lenet -lenet -L/usr/X11R6/lib -lX11 `sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lz -lGL -I /usr/local/include/bullet/  -lrt
+shared/crypto.o: In function `btTypedConstraint::~btTypedConstraint()':
+crypto.cpp:(.text._ZN17btTypedConstraintD0Ev[_ZN17btTypedConstraintD0Ev]+0x8): undefined reference to `btAlignedFreeInternal(void*)'
+shared/crypto.o: In function `btTriangleInfoMap::~btTriangleInfoMap()':
+crypto.cpp:(.text._ZN17btTriangleInfoMapD2Ev[_ZN17btTriangleInfoMapD5Ev]+0xe1): undefined reference to `btAlignedFreeInternal(void*)'
+crypto.cpp:(.text._ZN17btTriangleInfoMapD2Ev[_ZN17btTriangleInfoMapD5Ev]+0xf1): undefined reference to `btAlignedFreeInternal(void*)'
+crypto.cpp:(.text._ZN17btTriangleInfoMapD2Ev[_ZN17btTriangleInfoMapD5Ev]+0x101): undefined reference to `btAlignedFreeInternal(void*)'
+crypto.cpp:(.text._ZN17btTriangleInfoMapD2Ev[_ZN17btTriangleInfoMapD5Ev]+0x111): undefined reference to `btAlignedFreeInternal(void*)'
+shared/crypto.o:crypto.cpp:(.text._ZN17btTriangleInfoMapD0Ev[_ZN17btTriangleInfoMapD0Ev]+0xf1): more undefined references to `btAlignedFreeInternal(void*)' follow
+shared/crypto.o:(.rodata._ZTV17btTypedConstraint[_ZTV17btTypedConstraint]+0x60): undefined reference to `btTypedConstraint::serialize(void*, btSerializer*) const'
+engine/AJMPhys.o: In function `buildLevelTriCol()':
+AJMPhys.cpp:(.text+0x1151): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x1ca9): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x1cd3): undefined reference to `btTriangleIndexVertexArray::btTriangleIndexVertexArray(int, int*, int, int, float*, int)'
+AJMPhys.cpp:(.text+0x1d41): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x1d6e): undefined reference to `btBvhTriangleMeshShape::btBvhTriangleMeshShape(btStridingMeshInterface*, bool, btVector3 const&, btVector3 const&, bool)'
+AJMPhys.cpp:(.text+0x1dd1): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x20db): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x20ee): undefined reference to `btRigidBody::btRigidBody(btRigidBody::btRigidBodyConstructionInfo const&)'
+engine/AJMPhys.o: In function `addplayertobullet()':
+AJMPhys.cpp:(.text+0x25a3): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x25f5): undefined reference to `btCapsuleShape::btCapsuleShape(float, float)'
+AJMPhys.cpp:(.text+0x2655): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x2928): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x2938): undefined reference to `btRigidBody::btRigidBody(btRigidBody::btRigidBodyConstructionInfo const&)'
+AJMPhys.cpp:(.text+0x2a0d): undefined reference to `btRigidBody::setCenterOfMassTransform(btTransform const&)'
+AJMPhys.cpp:(.text+0x2aa6): undefined reference to `btRigidBody::setDamping(float, float)'
+AJMPhys.cpp:(.text+0x2ac4): undefined reference to `btCollisionObject::forceActivationState(int) const'
+engine/AJMPhys.o: In function `PHYSInit()':
+AJMPhys.cpp:(.text+0x2c80): undefined reference to `btDefaultCollisionConfiguration::btDefaultCollisionConfiguration(btDefaultCollisionConstructionInfo const&)'
+AJMPhys.cpp:(.text+0x2ca3): undefined reference to `btCollisionDispatcher::btCollisionDispatcher(btCollisionConfiguration*)'
+AJMPhys.cpp:(.text+0x2cc1): undefined reference to `btDbvtBroadphase::btDbvtBroadphase(btOverlappingPairCache*)'
+AJMPhys.cpp:(.text+0x2cd7): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x2ce2): undefined reference to `btSequentialImpulseConstraintSolver::btSequentialImpulseConstraintSolver()'
+AJMPhys.cpp:(.text+0x2cf8): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x2d1f): undefined reference to `btDiscreteDynamicsWorld::btDiscreteDynamicsWorld(btDispatcher*, btBroadphaseInterface*, btConstraintSolver*, btCollisionConfiguration*)'
+AJMPhys.cpp:(.text+0x2dae): undefined reference to `body'
+engine/AJMPhys.o: In function `addPhysicEntToBullet(physent*)':
+AJMPhys.cpp:(.text+0x2e27): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x2e72): undefined reference to `btCapsuleShape::btCapsuleShape(float, float)'
+AJMPhys.cpp:(.text+0x2edd): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x317c): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x318c): undefined reference to `btRigidBody::btRigidBody(btRigidBody::btRigidBodyConstructionInfo const&)'
+AJMPhys.cpp:(.text+0x3253): undefined reference to `btRigidBody::setCenterOfMassTransform(btTransform const&)'
+AJMPhys.cpp:(.text+0x32e1): undefined reference to `btRigidBody::setDamping(float, float)'
+AJMPhys.cpp:(.text+0x3303): undefined reference to `btCollisionObject::forceActivationState(int) const'
+AJMPhys.cpp:(.text+0x337d): undefined reference to `btRigidBody::setGravity(btVector3 const&)'
+engine/AJMPhys.o: In function `btmoveplayer(physent*, int)':
+AJMPhys.cpp:(.text+0x3b93): undefined reference to `btCollisionObject::forceActivationState(int) const'
+AJMPhys.cpp:(.text+0x3bc4): undefined reference to `btRigidBody::setGravity(btVector3 const&)'
+AJMPhys.cpp:(.text+0x3bdc): undefined reference to `btRigidBody::setDamping(float, float)'
+AJMPhys.cpp:(.text+0x3c6d): undefined reference to `btCollisionObject::forceActivationState(int) const'
+AJMPhys.cpp:(.text+0x3c84): undefined reference to `btRigidBody::setDamping(float, float)'
+AJMPhys.cpp:(.text+0x3dcd): undefined reference to `btCollisionObject::forceActivationState(int) const'
+AJMPhys.cpp:(.text+0x3df6): undefined reference to `btRigidBody::setDamping(float, float)'
+AJMPhys.cpp:(.text+0x3ef4): undefined reference to `btRigidBody::setDamping(float, float)'
+AJMPhys.cpp:(.text+0x3f56): undefined reference to `btRigidBody::setGravity(btVector3 const&)'
+engine/AJMPhys.o: In function `setcbfrommodel(vec, char const*, vec, int)':
+AJMPhys.cpp:(.text+0x4648): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x465b): undefined reference to `btBoxShape::btBoxShape(btVector3 const&)'
+AJMPhys.cpp:(.text+0x46cc): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x49be): undefined reference to `btAlignedAllocInternal(unsigned long, int)'
+AJMPhys.cpp:(.text+0x49d1): undefined reference to `btRigidBody::btRigidBody(btRigidBody::btRigidBodyConstructionInfo const&)'
+AJMPhys.cpp:(.text+0x4c6f): undefined reference to `btRigidBody::setCenterOfMassTransform(btTransform const&)'
+AJMPhys.cpp:(.text+0x4dc5): undefined reference to `btRigidBody::setDamping(float, float)'
+AJMPhys.cpp:(.text+0x4de3): undefined reference to `btCollisionObject::forceActivationState(int) const'
+engine/AJMPhys.o: In function `btDefaultMotionState::~btDefaultMotionState()':
+AJMPhys.cpp:(.text._ZN20btDefaultMotionStateD0Ev[_ZN20btDefaultMotionStateD0Ev]+0x8): undefined reference to `btAlignedFreeInternal(void*)'
+engine/AJMPhys.o: In function `btAlignedObjectArray<btCollisionShape*>::~btAlignedObjectArray()':
+AJMPhys.cpp:(.text._ZN20btAlignedObjectArrayIP16btCollisionShapeED2Ev[_ZN20btAlignedObjectArrayIP16btCollisionShapeED5Ev]+0x41): undefined reference to `btAlignedFreeInternal(void*)'
+game/AJMmovable.o: In function `game::updatebulletmovables(vec, vec, int)':
+AJMmovable.cpp:(.text+0x550): undefined reference to `btRigidBody::getOrientation() const'
+collect2: error: ld returned 1 exit status
+make: *** [client] Error 1
